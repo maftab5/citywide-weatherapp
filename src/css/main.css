@@ -1,0 +1,62 @@
+body {
+    position: relative;
+    background: url('weather.jpg') no-repeat center center fixed;
+    min-height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header{
+    font-size: 3rem;
+    color: white;
+    text-decoration: underline;
+    margin-bottom: 5%;
+    text-transform: uppercase;
+}
+#root:before {
+    content: '';
+    display: block;
+    position: absolute;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    opacity: 0.2;
+}
+
+.flex-container,
+.flex-input {
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    text-align: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: row !important;
+    background-color: lightyellow !important;
+}
+
+.main_temperature {
+    font-size: 4rem;
+}
+
+.temp_section {
+    flex-direction: column;
+    margin: auto 4%;
+}
+
+.location {
+    font-size: 1.5rem;
+}
+
+.weather-item {
+    margin: 1% 1%;
+    min-width: 40% !important;
+}
+
+
+.btn-success {
+    /* margin: 1% 1%;
+    height: 80% !important; */
+}

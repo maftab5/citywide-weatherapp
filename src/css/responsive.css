@@ -1,0 +1,141 @@
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+    
+header{
+    font-size: 1.5rem;
+}
+    .flex-container {
+        flex-direction: column !important;
+        max-width: 80% !important;
+        margin: auto;
+    }
+    .card {
+        flex-direction: row;
+    }
+    .flex-input{
+        flex-direction: column;
+        
+    }
+    .form-control{
+        flex-direction: column !important;
+        max-width: 80% !important;
+        margin: 1% auto;
+    }
+    .btn-success {
+        max-width: 80% !important;
+        margin: 1% 10%;
+    }
+    
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {
+    header{
+        font-size: 2rem;
+    }
+    .flex-container{
+        flex-direction: column !important;
+        max-width: 80% !important;
+        margin: auto;
+    }
+    
+    .flex-input {
+        flex-direction: column !important;
+    }
+    .card {
+        flex-direction: row;
+    }
+    .form-control{
+        flex-direction: column !important;
+        max-width: 80% !important;
+        margin: 1% auto;
+    }
+    .btn-success {
+        max-width: 80% !important;
+        margin: 1% 10%;
+    }
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {
+    .flex-container {
+        flex-direction: row !important;
+    }
+    .flex-input {
+        flex-direction: row !important;
+        margin-left:12%;
+    }
+    .card {
+        flex-direction: row;
+    }
+    .form-control{
+        flex-direction: column !important;
+        max-width: 40% !important;
+        margin: 1% auto;
+    }
+    .btn-success {
+        max-width: 80% !important;
+        margin: 1% 10%;
+    }
+}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {
+    .flex-container{
+        flex-direction: row !important;
+    }
+    .flex-input {
+        flex-direction: row !important;
+        margin-left: 10%;
+    }
+    .card {
+        flex-direction: row;
+    }
+    .form-control{
+        flex-direction: column !important;
+        max-width: 36% !important;
+        /* max-width: 40% !important; */
+        margin: 1%;
+    }
+    .btn-success {
+        
+        margin: 1% 1%;
+    }
+}
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {
+    .flex-container{
+        flex-direction: row !important;
+    }
+    .temp_section {
+        flex-direction: column;
+        margin: 1%;
+    }
+    .flex-input {
+        flex-direction: row !important;
+        margin-left: 14%;
+    }
+    .card {
+        flex-direction: row;
+    }
+    .form-control{
+        flex-direction: column !important;
+        max-width: 35% !important;
+        /* max-width: 40% !important; */
+        margin: 1% auto ;
+    }
+    .btn-success {
+        
+        margin: 1% 1%;
+    }
+}
