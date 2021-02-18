@@ -45,7 +45,8 @@ const SearchLocation = ({ value, change, submit }) => (
  * shape is used foo Object propType
  */
 SearchLocation.propTypes = {
-  value: PropTypes.shape.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  value: PropTypes.object.isRequired,
   change: PropTypes.func.isRequired,
   submit: PropTypes.func.isRequired,
 };

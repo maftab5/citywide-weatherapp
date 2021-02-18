@@ -141,7 +141,7 @@ const App = () => {
     }));
   };
 
-  const allLocationInfo = [weatherInfo.locationOneInfo, weatherInfo.locationTwoInfo]
+  const allLocationInfo = [weatherInfo.locationOneInfo, weatherInfo.locationTwoInfo];
   // eslint-disable-next-line no-console
   console.log(allLocationInfo);
   return (

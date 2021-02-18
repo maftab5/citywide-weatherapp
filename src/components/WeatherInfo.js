@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 /* eslint-disable linebreak-style */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/jsx-filename-extension */
@@ -37,19 +38,17 @@ const WeatherInfoDiv = ({ weatherInfo }) => (
                 width="30"
               />
 
-              <p className="card-text">
-                <p>
-                  {kelvinToCelsius(main.temp_max)}&deg;
-                  |
-                  {kelvinToCelsius(main.temp_min)}&deg;
-                </p>
+              <div className="card-text">
+                {kelvinToCelsius(main.temp_max)}&deg;
+                |
+                {kelvinToCelsius(main.temp_min)}&deg;
                 <p>
                   Feels like: {kelvinToCelsius(main.feels_like)}&deg;
                 </p>
                 <p> Wind: {wind.speed} mph </p>
                 <p> Sunrise: {convertTimestamp((sys.sunrise))} AM </p>
                 <p> Sunset: {convertTimestamp(sys.sunset)} PM </p>
-              </p>
+              </div>
             </section>
           </div>
         </div>
@@ -59,6 +58,6 @@ const WeatherInfoDiv = ({ weatherInfo }) => (
   </>
 );
 WeatherInfoDiv.propTypes = {
-  weatherInfo: PropTypes.arrayOf.isRequired,
+  weatherInfo: PropTypes.array.isRequired,
 };
 export default WeatherInfoDiv;
