@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable react/forbid-prop-types */
 /* eslint-disable linebreak-style */
 /* eslint-disable react/jsx-one-expression-per-line */
@@ -11,21 +12,24 @@ import { kelvinToCelsius, convertTimestamp, getWeatherImage } from '../functions
  * the weather information
  */
 
-const WeatherInfoDiv = ({ weatherInfo }) => (
+const WeatherInfo = ({ weatherInfo }) => (
   <>
+
     <div className="flex-container">
-      {weatherInfo.map(({
+      {
+      weatherInfo.map(({
         name, main, sys, weather, wind,
-      }, key) => (
+      }, index) => (
+
         // eslint-disable-next-line react/no-array-index-key
-        <div className="weather-item" key={key}>
+        <div className="weather-item" key={index}>
           <div className="card">
             <section className="temp_section">
               <p className="main_temperature">
                 {' '}
                 {kelvinToCelsius(main.temp)}&deg;
               </p>
-              <h3 className="location">
+              <h3 className={`location${index} `}>
                 {name}, {sys.country}
               </h3>
             </section>
@@ -53,11 +57,12 @@ const WeatherInfoDiv = ({ weatherInfo }) => (
           </div>
         </div>
 
-      ))}
+      ))
+}
     </div>
   </>
 );
-WeatherInfoDiv.propTypes = {
+WeatherInfo.propTypes = {
   weatherInfo: PropTypes.array.isRequired,
 };
-export default WeatherInfoDiv;
+export default WeatherInfo;
