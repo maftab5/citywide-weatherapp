@@ -1,10 +1,16 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable react/forbid-prop-types */
-/* eslint-disable linebreak-style */
 /* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable react/jsx-filename-extension */
 /* eslint-disable linebreak-style */
+
+/**
+ * WeatherInfo component display the
+ * weather information data
+ *  @param {*} weatherInfo is the array of weather info
+ * from App component
+ */
 import PropTypes from 'prop-types';
 import { kelvinToCelsius, convertTimestamp, getWeatherImage } from '../functions/function';
 /**
