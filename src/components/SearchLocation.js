@@ -6,39 +6,45 @@
 /**
  *Component to get the user's input
  *for two cities.
+ *@param {value} value is the object containing
+ *locationOne and locationTwo values
+ *@param {change} is the function to capture
+ *the change in input values
+ *@param {submit} is the function to trigger
+ *the submit
  */
 import PropTypes from 'prop-types';
 
 const SearchLocation = ({ value, change, submit }) => (
-         <>
-        <div className="flex-input">
+  <>
+    <div className="flex-input">
 
-            <input
-              type="text"
-              name="locationOne"
-              placeholder="Enter the location One"
-              className="form-control"
-              value={value.locationOne}
-              onChange={change}
-            />
+      <input
+        type="text"
+        name="locationOne"
+        placeholder="Enter the location One"
+        className="form-control"
+        value={value.locationOne}
+        onChange={change}
+      />
 
-            <input
-              type="text"
-              name="locationTwo"
-              placeholder="Enter the location Two"
-              className="form-control"
-              value={value.locationTwo}
-              onChange={change}
-            />
-             <input
-               type="button"
-               onClick={submit}
-               className="btn btn-success"
-               value="Search"
-             />
-        </div>
+      <input
+        type="text"
+        name="locationTwo"
+        placeholder="Enter the location Two"
+        className="form-control"
+        value={value.locationTwo}
+        onChange={change}
+      />
+      <input
+        type="button"
+        onClick={submit}
+        className="btn btn-success"
+        value="Search"
+      />
+    </div>
 
-         </>
+  </>
 );
 
 /**
