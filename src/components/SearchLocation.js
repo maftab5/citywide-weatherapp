@@ -39,7 +39,7 @@ const SearchLocation = ({ value, change, submit }) => (
       <input
         type="button"
         onClick={submit}
-        className="btn btn-success"
+        className="btn btn-primary"
         value="Search"
       />
     </div>
