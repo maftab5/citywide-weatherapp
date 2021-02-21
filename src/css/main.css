@@ -33,10 +33,13 @@ header{
 
 .card {
     display: flex;
-    flex-direction: row !important;
+    flex-direction: column !important;
     background-color: lightyellow !important;
 }
-
+.notfound-card{
+    padding: 6% 4%;
+    background-color: lightyellow !important;
+}
 .main_temperature {
     font-size: 4rem;
 }
@@ -55,8 +58,3 @@ header{
     min-width: 40% !important;
 }
 
-
-.btn-success {
-    /* margin: 1% 1%;
-    height: 80% !important; */
-}
