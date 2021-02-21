@@ -6,8 +6,6 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import './css/main.css';
 import './css/responsive.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import 'jquery/dist/jquery';
-import 'bootstrap/dist/js/bootstrap.js';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 
