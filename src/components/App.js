@@ -1,7 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { useState, useEffect } from 'react';
 import SearchLocation from './SearchLocation';
-import WeatherInfoDiv from './WeatherInfo';
+import WeatherInfo from './WeatherInfo';
 
 const App = () => {
   /**
@@ -26,12 +26,14 @@ const App = () => {
       locationOneInfo: [],
       locationTwoInfo: [],
     },
-    error: false,
+    errors: '',
     loading: true,
 
   });
 
-  const { userInputValue, weatherInfo, loading } = state;
+  const {
+    userInputValue, weatherInfo, loading, errors,
+  } = state;
 
   const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
   const locationApiKey = process.env.REACT_APP_GEOLOCATION_API_KEY;
@@ -55,11 +57,8 @@ const App = () => {
       // eslint-disable-next-line max-len
       const [locationInfo1, locationInfo2] = await Promise.all([response1.json(), response2.json()]);
 
-      const lat1 = locationInfo1.results[0].geometry.lat;
-      const lng1 = locationInfo1.results[0].geometry.lng;
-      const lat2 = locationInfo2.results[0].geometry.lat;
-      const lng2 = locationInfo2.results[0].geometry.lng;
-
+      const { lat: lat1, lng: lng1 } = locationInfo1.results[0].geometry;
+      const { lat: lat2, lng: lng2 } = locationInfo2.results[0].geometry;
       setState((prevState) => ({
         ...prevState,
         userInputCoordintes: {
@@ -75,13 +74,14 @@ const App = () => {
             lng2,
           },
         },
+        errors: '',
       }));
       // eslint-disable-next-line no-use-before-define
       fetchWeatherInfo(lat1, lng1, lat2, lng2);
     } catch (e) {
       setState((prevState) => ({
         ...prevState,
-        error: e,
+        errors: e,
       }));
       // eslint-disable-next-line no-console
       console.log(`Error messaage :${e}`);
@@ -109,13 +109,13 @@ const App = () => {
           locationOneInfo,
           locationTwoInfo,
         },
-        error: false,
+        error: '',
         loading: false,
       }));
-    } catch (error) {
+    } catch (e) {
       setState((prevState) => ({
         ...prevState,
-        error,
+        errors: e,
       }));
     }
   };
@@ -149,7 +149,7 @@ const App = () => {
     <>
       <SearchLocation value={userInputValue} change={handleInputChange} submit={fetchLatLong} />
       {
-        loading ? '' : <WeatherInfoDiv weatherInfo={allLocationInfo} />
+        loading ? '' : <WeatherInfo weatherInfo={allLocationInfo} error={errors} />
       }
 
     </>
