@@ -48,10 +48,20 @@ describe('weather information test', () => {
 const error = '';
 const wrapper = mount(<WeatherInfo weatherInfo={data} error={error} />);
 const nameField = wrapper.find('.location1');
-test('successful if location is same', () => {
-  expect(nameField.text()).toBe('nepal, NP');
-});
-test('fails if the text is not same', () => {
-  expect(nameField.text()).toBe('korea, NP');
+
+describe('WeatherInfo', () => {
+  test('successful if location is same', () => {
+    expect(nameField.text()).toBe('nepal, NP');
+  });
+  test('fails if the text is not same', () => {
+    expect(nameField.text()).not.toBe('korea, NP');
+  });
+  test('WeatherInfo exists', () => {
+    expect(wrapper.exists()).toBe(true);
+  });
+
+  it('number of props receives', () => {
+    expect(Object.keys(wrapper.props()).length).toBe(2);
+  });
 });
 });
